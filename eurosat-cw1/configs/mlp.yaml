@@ -1,0 +1,37 @@
+# PyTorch MLP configuration
+# Two-hidden-layer fully connected network
+
+model: mlp_pytorch
+
+architecture:
+  input_size: 12288         # 64 * 64 * 3 (flattened)
+  hidden_1: 512
+  hidden_2: 256
+  output: 10
+  activation: relu
+  dropout: 0.3
+
+training:
+  batch_size: 64
+  max_epochs: 40
+  patience: 5               # early stopping patience (val loss)
+  seeds: [0, 1, 2]          # T4a: 3 seeds, same data split
+
+optimiser:
+  name: adam
+  lr: 0.001
+  weight_decay: 0.0001
+
+loss: cross_entropy          # softmax inside loss; output raw logits
+
+augmentation:                # training split only
+  random_horizontal_flip: true
+  random_vertical_flip: true
+  random_90_rotation: true
+
+checkpoint_dir: checkpoints/
+checkpoint_name: mlp_seed{seed}.pt
+
+normalisation:
+  source: splits/preprocessing.json   # mean/std from train split only
+

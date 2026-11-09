@@ -1,0 +1,56 @@
+# CNN Ablation configuration
+# Identical to cnn.yaml except: dropout = 0.0 (removed)
+# T4c: change exactly one factor, keep everything else identical
+
+model: cnn_pytorch
+ablation_note: "Remove dropout layer. Only change vs cnn.yaml: dropout 0.3 -> 0.0"
+
+architecture:
+  conv_blocks:
+    - in_channels: 3
+      out_channels: 32
+      kernel_size: 3
+      padding: 1
+      pool: 2
+      norm: batch_norm
+    - in_channels: 32
+      out_channels: 64
+      kernel_size: 3
+      padding: 1
+      pool: 2
+      norm: batch_norm
+    - in_channels: 64
+      out_channels: 128
+      kernel_size: 3
+      padding: 1
+      pool: 2
+      norm: batch_norm
+  global_pool: adaptive_avg
+  dropout: 0.0              # ABLATION CHANGE: was 0.3, now 0.0
+  output: 10
+  activation: relu
+
+training:
+  batch_size: 64
+  max_epochs: 40
+  patience: 5
+  seeds: [0, 1, 2]          # same 3 seeds as full CNN
+
+optimiser:
+  name: adam
+  lr: 0.001                 # identical to cnn.yaml
+  weight_decay: 0.0001
+
+loss: cross_entropy
+
+augmentation:
+  random_horizontal_flip: true
+  random_vertical_flip: true
+  random_90_rotation: true
+
+checkpoint_dir: checkpoints/
+checkpoint_name: cnn_ablation_seed{seed}.pt
+
+evaluation_split: val        # compare on val only — never test
+confounder_note: "Early stopping may stop at different epochs; this is an acknowledged confounder."
+

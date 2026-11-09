@@ -1,0 +1,37 @@
+# EuroSAT CW1 — eurosat-cw1/.gitignore
+
+# ── Raw data (too large; redistributed from torchvision) ──────────────────────
+data/
+*.npz
+
+# ── Model checkpoints ─────────────────────────────────────────────────────────
+# Commit only the final best-seed checkpoint if size allows; otherwise
+# store on Google Drive and list the path in README.
+checkpoints/*.pt
+
+# ── Python cache ──────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.ipynb_checkpoints/
+
+# ── Virtual environments ───────────────────────────────────────────────────────
+venv/
+.env/
+env/
+
+# ── OS artefacts ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Jupyter temp ──────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── Colab / Drive artefacts ───────────────────────────────────────────────────
+*.pkl.tmp
+drive/
+
+# ── Misc ──────────────────────────────────────────────────────────────────────
+*.log
+*.swp
+

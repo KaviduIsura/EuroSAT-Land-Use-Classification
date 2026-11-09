@@ -1,0 +1,29 @@
+# Baseline model configuration
+# HOG + Colour Histogram + Logistic Regression
+
+model: baseline_hog_lr
+
+# HOG feature extraction
+hog:
+  orientations: 9
+  pixels_per_cell: [8, 8]
+  cells_per_block: [2, 2]
+
+# Colour histogram
+colour_histogram:
+  bins: 8
+  range: [0, 256]
+  channels: 3
+
+# Logistic Regression
+logistic_regression:
+  C: 1.0           # regularisation strength (tune within 6-trial budget)
+  max_iter: 2000
+  random_state: 42
+
+# Tuning budget (val macro-F1 only — never use test)
+tuning:
+  C_values: [0.01, 0.1, 1.0, 5.0, 10.0, 50.0]
+  max_trials: 6
+  metric: val_macro_f1
+

@@ -1,0 +1,54 @@
+# PyTorch CNN configuration
+# 3-block convolutional neural network
+
+model: cnn_pytorch
+
+architecture:
+  conv_blocks:
+    - in_channels: 3
+      out_channels: 32
+      kernel_size: 3
+      padding: 1
+      pool: 2
+      norm: batch_norm
+    - in_channels: 32
+      out_channels: 64
+      kernel_size: 3
+      padding: 1
+      pool: 2
+      norm: batch_norm
+    - in_channels: 64
+      out_channels: 128
+      kernel_size: 3
+      padding: 1
+      pool: 2
+      norm: batch_norm
+  global_pool: adaptive_avg   # AdaptiveAvgPool2d(1)
+  dropout: 0.3
+  output: 10
+  activation: relu
+
+training:
+  batch_size: 64
+  max_epochs: 40
+  patience: 5
+  seeds: [0, 1, 2]
+
+optimiser:
+  name: adam
+  lr: 0.001
+  weight_decay: 0.0001
+
+loss: cross_entropy
+
+augmentation:
+  random_horizontal_flip: true
+  random_vertical_flip: true
+  random_90_rotation: true
+
+checkpoint_dir: checkpoints/
+checkpoint_name: cnn_seed{seed}.pt
+
+normalisation:
+  source: splits/preprocessing.json
+
