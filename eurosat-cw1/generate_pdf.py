@@ -152,3 +152,4 @@ for q, a in qa_pairs:
 out_pdf = 'eurosat-cw1/EuroSAT_CW1_Demo_Script.pdf'
 pdf.output(out_pdf)
 print(f'PDF successfully saved to: {out_pdf}')
+

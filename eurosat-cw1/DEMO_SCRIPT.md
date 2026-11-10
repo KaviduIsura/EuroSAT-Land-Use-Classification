@@ -94,3 +94,4 @@ In conclusion, I recommend the CNN for deployment due to high accuracy, low para
   * *Answer:* "ReLU has a non-differentiable kink at zero which causes finite difference checks to fail. Tanh is smooth and differentiable everywhere."
 * **Q5: What was the main finding of the noise stress test?**
   * *Answer:* "It proved high clean test accuracy does not guarantee robustness against sensor degradation; performance dropped from 0.92 to 0.16 at $\sigma=0.20$."
+
