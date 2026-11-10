@@ -328,9 +328,10 @@
 ### Cell 5: Live Demo — Normal Satellite Image
 * **What it does:** Predicts on a valid test image.
 * **What to say:**  
-  > "In Cell 5, I test a normal satellite image. The CNN correctly predicts PermanentCrop with 99.2% confidence."
+  > "In Cell 5, I tested a normal satellite image from the test set. As shown in the output on my screen, the model correctly classified it as PermanentCrop with 99.2% confidence."
 
 ### Cell 6: Live Demo — Edge Cases & Out-of-Scope Noise
 * **What it does:** Tests an invalid text file and a pure random noise image.
 * **What to say:**  
-  > "In Cell 6, I test edge cases. The text file is safely caught with an error message. But for random white noise, the network predicts Highway with 88.8% confidence. This proves an important finding: Softmax neural networks can be overly confident on out-of-distribution inputs."
+  > "In Cell 6, I tested two edge cases and obtained these results on screen. First, the text file was safely caught with an explicit error message. Second, for pure random white noise, the network predicted Highway with 88.8% confidence. This proves an essential finding: Softmax neural networks can be confidently wrong on out-of-distribution inputs."
+

@@ -69,16 +69,16 @@ I also conducted a Gaussian noise stress test. As noise sigma increased from 0.0
 ### Part 5: Live Inference Pipeline & Edge Case Demo (1 minute 15 seconds)
 > **Action on Screen:** Show Notebook 8 (`08_recommendation_inference.ipynb`). Highlight or run the prediction cells at the bottom.
 
-"Finally, in Notebook 8, I benchmarked inference latency and deployed the prediction pipeline:
+"Finally, in Notebook 8, I benchmarked inference latency and tested the deployment pipeline. As you can see from my executed run on screen:
 
 Inference takes only 0.73 milliseconds per batch of 64 on GPU, proving it is ready for real-time applications.
 
-Here is the live inference demonstration:
-1. **Valid Satellite Image:** Correctly classified as `PermanentCrop` with 99.2% confidence.
-2. **Invalid Text File:** The pipeline safely catches the error and reports an unreadable file.
-3. **Out-of-Scope White Noise:** The network predicts `Highway` with 88.8% confidence. This demonstrates an essential academic finding: Softmax confidence is imperfect for out-of-distribution detection, as neural networks can be confidently wrong on synthetic noise.
+I tested three distinct inputs and obtained these exact results:
+1. **Valid Satellite Image:** The CNN correctly classified the satellite patch as `PermanentCrop` with 99.2% confidence.
+2. **Invalid Text File:** The pipeline safely caught the file format error and reported an unreadable file without crashing.
+3. **Out-of-Scope White Noise:** The network classified the random noise as `Highway` with 88.8% confidence. This demonstrates an essential academic finding: Softmax confidence is imperfect for out-of-distribution detection, as neural networks can be confidently wrong on synthetic noise.
 
-In conclusion, I recommend the CNN for deployment due to high accuracy, low parameters, and sub-millisecond latency. Thank you."
+In conclusion, I recommend the CNN for deployment due to high accuracy (93%), low parameters (94K), and sub-millisecond latency. Thank you."
 
 ---
 
