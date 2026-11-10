@@ -4,7 +4,14 @@
 **Task:** Classify 64×64 Sentinel-2 satellite patches into 10 land-use classes.  
 **Dataset:** EuroSAT RGB (Helber et al., 2019) — 27,000 images, 10 classes.
 
+
+## 🔗 Project & Submission Links
+
+* **Demonstration Video:** [Google Drive Video Link](https://drive.google.com/file/d/1RjGWZ38y6NRWB9XuY0VWC1I8HsutZUzg/view?usp=sharing)
+* **GitHub Repository:** [https://github.com/KaviduIsura/EuroSAT-Land-Use-Classification](https://github.com/KaviduIsura/EuroSAT-Land-Use-Classification)
+
 ---
+
 
 ## Project Summary
 

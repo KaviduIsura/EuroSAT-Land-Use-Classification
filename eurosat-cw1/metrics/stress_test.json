@@ -1,0 +1,22 @@
+{
+  "model": "cnn",
+  "seed": 0,
+  "stress_test": [
+    {
+      "sigma": 0.0,
+      "macro_f1": 0.9263
+    },
+    {
+      "sigma": 0.05,
+      "macro_f1": 0.8542
+    },
+    {
+      "sigma": 0.1,
+      "macro_f1": 0.5822
+    },
+    {
+      "sigma": 0.2,
+      "macro_f1": 0.1656
+    }
+  ]
+}

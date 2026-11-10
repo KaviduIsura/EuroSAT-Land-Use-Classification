@@ -1,0 +1,29 @@
+{
+  "model": "cnn_pytorch",
+  "config": "cnn.yaml",
+  "params": 94986,
+  "val_mean": 0.9068,
+  "val_std": 0.0148,
+  "test_mean": 0.9103,
+  "test_std": 0.0129,
+  "seeds": [
+    {
+      "seed": 0,
+      "val_macro_f1": 0.9262,
+      "test_macro_f1": 0.9263,
+      "test_accuracy": 0.9291
+    },
+    {
+      "seed": 1,
+      "val_macro_f1": 0.904,
+      "test_macro_f1": 0.91,
+      "test_accuracy": 0.9067
+    },
+    {
+      "seed": 2,
+      "val_macro_f1": 0.8902,
+      "test_macro_f1": 0.8946,
+      "test_accuracy": 0.8943
+    }
+  ]
+}

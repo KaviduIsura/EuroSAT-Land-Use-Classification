@@ -1,0 +1,24 @@
+{
+  "mean": [
+    0.2167,
+    0.2167,
+    0.2167
+  ],
+  "std": [
+    0.2201,
+    0.1861,
+    0.1872
+  ],
+  "classes": [
+    "AnnualCrop",
+    "Forest",
+    "HerbaceousVegetation",
+    "Highway",
+    "Industrial",
+    "Pasture",
+    "PermanentCrop",
+    "Residential",
+    "River",
+    "SeaLake"
+  ]
+}
